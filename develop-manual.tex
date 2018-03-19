@@ -689,25 +689,60 @@ tar -zxvf openvpn-2.4.1.tar.gz
 make && make install
 \end{lstlisting}
 
-LZO 是致力于解压速度的一种数据压缩算法，LZO 是 Lempel-Ziv-Oberhumer 的缩写。这个算法是无损算法，参考实现程序是线程安全的。 实现它的一个自由软件工具是lzop。最初的库是用 ANSI C 编写、并且遵从 GNU通用公共许可证发布的。现在 LZO 有用于 Perl、Python 以及 Java 的各种版本。代码版权的所有者是 Markus F. X. J. Oberhumer。
-
-\paragraph{生成客户端证书}
-
-OpenVPN服务器需要四个文件ca.crt、server.crt、server.key和dh1024.pem。
+LZO 是致力于解压速度的一种数据压缩算法，LZO 是 Lempel-Ziv-Oberhumer 的缩写。这个算法是无损算法，参考实现程序是线程安全的。 实现它的一个自由软件工具是lzop。最初的库是用 ANSI C 编写、并且遵从 GNU通用公共许可证发布的。现在 LZO 有用于 Perl、Python 以及 Java 的各种版本。代码版权的所有者是 Markus F. X. J. Oberhumer。如果没有安装easyrsa工具,使用如下命令安装:
 
 \begin{lstlisting}[language=Bash]
-
+#下载easy-rsa源码
+wget -c https://github.com/OpenVPN/easy-rsa/archive/master.zip
+#目录/etc/openvpn/easy-rsa/easyrsa3下拷贝默认配置
+cp var.example vars
 \end{lstlisting}
+
+
+\paragraph{调整配置}
+
+修改证书生成的配置文件:
+
+\begin{lstlisting}[language=Bash]
+set_var EASYRSA_REQ_COUNTRY     "CN"
+set_var EASYRSA_REQ_PROVINCE    "Chongqing"
+set_var EASYRSA_REQ_CITY        "Chongqing"
+set_var EASYRSA_REQ_ORG "Three people"
+set_var EASYRSA_REQ_EMAIL       "jiangtingqiang@gmail.com"
+set_var EASYRSA_REQ_OU          "My Organizational"
+
+set_var EASYRSA_KEY_SIZE        2048
+\end{lstlisting}
+
+\paragraph{生成根证书}
+
+生成OpenVPN的根证书:
+
+\begin{lstlisting}[language=Bash]
+#清除之前生成的证书,重新生成;
+./easyrsa clean-all
+#生成root根证书
+#证书路径:/etc/openvpn/easy-rsa/easyrsa3/pki/ca.crt
+./easyrsa build-ca
+\end{lstlisting}
+
+
+\paragraph{生成服务器端证书}
+
+生成服务器端证书命令如下:
+
+\begin{lstlisting}[language=Bash]
+# 指定服务端证书的文件名为server,可以任意改动
+./easyrsa build-server-full server
+\end{lstlisting}
+
+
+\paragraph{生成客户端证书}
 
 生成客户端证书端步骤如下：
 
 \begin{lstlisting}[language=Bash]
-#建立openvpn配置文件存放目录
-mkdir -p /etc/openvpn
-#如果没有安装easy-rsa工具
-yum install easy-rsa
-#建立一个空的pki结构，生成一系列的文件和目录
-./easyrsa init-pki
+./easyrsa build-client-full jiangxiaoqiang
 \end{lstlisting}
 
 PKI：Public Key Infrastructure公钥基础设施。生成请求：
@@ -816,6 +851,66 @@ verb 3
 \begin{lstlisting}[language=Bash]
 nsCertType server
 \end{lstlisting}
+
+\paragraph{生成Diffle Hellman参数}
+
+生成Diffle Hellman参数命令如下:
+
+\begin{lstlisting}[language=Bash]
+./easyrsa gen-dh
+\end{lstlisting}
+
+
+\subsection{fastDFS}
+
+启动tracker server:
+
+\begin{lstlisting}[language=Bash]
+/usr/bin/fdfs_trackerd /etc/fdfs/tracker.conf
+\end{lstlisting}
+
+启动storaged server:
+
+\begin{lstlisting}[language=Bash]
+/usr/bin/fdfs_storaged /etc/fdfs/storage.conf
+\end{lstlisting}
+
+
+
+\part{DB}
+
+
+\chapter{MariaDB}
+
+\section{常用操作}
+
+在CentOS下启动MariaDB:
+
+\begin{lstlisting}[language=Bash]
+systemctl start mariadb.service
+\end{lstlisting}
+
+
+\section{常见问题}
+
+\subsection{mariadb 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)}
+
+在使用命令登录时,出现错误.依次执行如下语句即可:
+
+\begin{lstlisting}[language=Bash]
+#停止MariaDB
+systemctl stop mariadb.service
+#登录
+mysqld_safe --user=mysql --skip-grant-tables --skip-networking &
+mysql -u root mysql
+#设置新密码
+UPDATE user SET Password=PASSWORD('123123') where USER='root'; 
+FLUSH PRIVILEGES;
+quit
+#启动MariaDB
+systemctl start mariadb.service
+\end{lstlisting}
+
 
 
 \chapter*{Bibliography}
