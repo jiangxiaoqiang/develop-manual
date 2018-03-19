@@ -668,7 +668,7 @@ youtube-dl -f 137 https://www.youtube.com/watch?v=SnHxKQiXrFU
 
 
 
-\chapter{OpenVPN}
+\subsection{OpenVPN}
 
 OpenVPN从2001年开始开发，使用的是C语言。此处使用的OpenVPN版本是2.4.1。如果使用Mac下的brew工具安装，则OpenVPN目录在：/usr/local/Cellar/openvpn/2.4.1，OpenVPN的配置文件在：/usr/local/etc/openvpn。目前OpenVPN能在Solaris、Linux、OpenBSD、FreeBSD、NetBSD、Mac OS X与Microsoft Windows以及Android和iOS上运行，并包含了许多安全性的功能。此处的服务器使用的是CentOS 7.3，客户端包含Fedora 24、Ubuntu 14.04、Ubuntu 16.04、Window 7、Windows 10。在OpenVPN网络中查看存活的主机：
 
@@ -676,7 +676,7 @@ OpenVPN从2001年开始开发，使用的是C语言。此处使用的OpenVPN版�
 nmap -A -T4 10.0.0.*
 \end{lstlisting}
 
-\subsection{安装(Install)}
+\paragraph{安装(Install)}
 
 安装基础包：
 
@@ -691,7 +691,7 @@ make && make install
 
 LZO 是致力于解压速度的一种数据压缩算法，LZO 是 Lempel-Ziv-Oberhumer 的缩写。这个算法是无损算法，参考实现程序是线程安全的。 实现它的一个自由软件工具是lzop。最初的库是用 ANSI C 编写、并且遵从 GNU通用公共许可证发布的。现在 LZO 有用于 Perl、Python 以及 Java 的各种版本。代码版权的所有者是 Markus F. X. J. Oberhumer。
 
-\subsection{生成客户端证书}
+\paragraph{生成客户端证书}
 
 生成客户端证书端步骤如下：
 
