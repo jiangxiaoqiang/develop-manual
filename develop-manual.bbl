@@ -16,6 +16,27 @@
   {}
 \endgroup
 
+\entry{book-wiresharkanalysis}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {林沛满}{�.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {人民邮电出版社}%
+  }
+  \strng{namehash}{�1}
+  \strng{fullhash}{�1}
+  \field{sortinit}{�}
+  \field{edition}{1}
+  \field{isbn}{978-7-115-41021-4}
+  \field{pages}{3\bibrangedash 6}
+  \field{title}{Wireshark网络分析的艺术}
+  \field{year}{2016}
+\endentry
+
 \lossort
 \endlossort
 

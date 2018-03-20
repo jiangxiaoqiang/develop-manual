@@ -5,47 +5,79 @@
 \contentsline {part}{\@mypartnumtocformat {I}{Tool}}{1}{part.1}
 \ttl@starttoc {default@1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {0.1}Tool Set}{3}{section.0.1}
+\contentsline {chapter}{\numberline {1}Widgets}{3}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {0.1.1}ECS(Elastic Compute Service)}{3}{subsection.0.1.1}
+\contentsline {section}{\numberline {1.1}ssh(Secure Shell)}{3}{section.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {0.1.2}shadowsocks}{3}{subsection.0.1.2}
+\contentsline {subsection}{\numberline {1.1.1}安全}{3}{subsection.1.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {0.1.3}youtube-dl}{3}{subsection.0.1.3}
+\contentsline {paragraph}{修改默认端口(Change Default Port)}{3}{section*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {0.1.4}Jenkins}{4}{subsection.0.1.4}
+\contentsline {paragraph}{免密登陆(Login Without Password)}{3}{section*.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {0.1.5}OpenVPN}{4}{subsection.0.1.5}
+\contentsline {subsection}{\numberline {1.1.2}ssh连接慢(Connect Slow)}{4}{subsection.1.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{安装(Install)}{4}{section*.2}
+\contentsline {subsection}{\numberline {1.1.3}Permission denied (publickey)}{5}{subsection.1.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{调整配置}{5}{section*.3}
+\contentsline {subsection}{\numberline {1.1.4}Session时间}{5}{subsection.1.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{生成根证书}{5}{section*.4}
+\contentsline {paragraph}{ClientAliveInterval}{6}{section*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{生成服务器端证书}{6}{section*.5}
+\contentsline {paragraph}{ClientAliveCountMax}{6}{section*.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{生成客户端证书}{6}{section*.6}
+\contentsline {paragraph}{ControlPersist 4h}{6}{section*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{生成Diffle Hellman参数}{8}{section*.7}
+\contentsline {subsection}{\numberline {1.1.5}代理转发}{6}{subsection.1.1.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {0.1.6}fastDFS}{8}{subsection.0.1.6}
+\contentsline {paragraph}{本地转发Local Forward}{6}{section*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\@mypartnumtocformat {II}{DB}}{11}{part.2}
+\contentsline {subsection}{\numberline {1.1.6}ssh查看日志}{7}{subsection.1.1.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}VisualVM}{8}{section.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Tool Set}{8}{section.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.1}ECS(Elastic Compute Service)}{8}{subsection.1.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.2}shadowsocks}{8}{subsection.1.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.3}youtube-dl}{8}{subsection.1.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.4}Jenkins}{9}{subsection.1.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.5}OpenVPN}{9}{subsection.1.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{安装(Install)}{10}{section*.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{调整配置}{10}{section*.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{生成根证书}{11}{section*.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{生成服务器端证书}{11}{section*.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{生成客户端证书}{11}{section*.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{生成Diffle Hellman参数}{13}{section*.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.6}fastDFS}{13}{subsection.1.3.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\@mypartnumtocformat {II}{DB}}{15}{part.2}
 \ttl@stoptoc {default@1}
 \ttl@starttoc {default@2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}MariaDB}{13}{chapter.1}
+\contentsline {chapter}{\numberline {2}MariaDB}{17}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}常用操作}{13}{section.1.1}
+\contentsline {section}{\numberline {2.1}常用操作}{17}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}常见问题}{13}{section.1.2}
+\contentsline {subsection}{\numberline {2.1.1}导入导出}{17}{subsection.2.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.1}mariadb 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)}{13}{subsection.1.2.1}
+\contentsline {section}{\numberline {2.2}常见问题}{17}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\leavevmode {\color {ocre}Bibliography}}{15}{chapter*.8}
+\contentsline {subsection}{\numberline {2.2.1}mariadb 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)}{17}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Books}{15}{section*.9}
+\contentsline {chapter}{\leavevmode {\color {ocre}Bibliography}}{19}{chapter*.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Articles}{15}{section*.10}
+\contentsline {section}{Books}{19}{section*.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Articles}{19}{section*.16}
 \contentsfinish 
