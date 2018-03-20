@@ -75,6 +75,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1.1}导入导出}{17}{subsection.2.1.1}
 \defcounter {refsection}{0}\relax 
+<<<<<<< HEAD
 \contentsline {section}{\numberline {2.2}常见问题}{17}{section.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.1}mariadb 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)}{17}{subsection.2.2.1}
@@ -84,4 +85,17 @@
 \contentsline {section}{Books}{19}{section*.17}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{Articles}{19}{section*.18}
+=======
+\contentsline {paragraph}{允许远程登录}{13}{section*.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}常见问题}{14}{section.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.1}mariadb 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)}{14}{subsection.1.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\leavevmode {\color {ocre}Bibliography}}{15}{chapter*.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Books}{15}{section*.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Articles}{15}{section*.11}
+>>>>>>> 4a51943b0adfcc2833175ee89b4f3e30f2fc0eec
 \contentsfinish 

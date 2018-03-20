@@ -1100,6 +1100,7 @@ openvpn --config /etc/openvpn/server.conf
 systemctl start mariadb.service
 \end{lstlisting}
 
+<<<<<<< HEAD
 \subsection{导入导出}
 
 导出整个库结构和数据:
@@ -1107,6 +1108,32 @@ systemctl start mariadb.service
 \begin{lstlisting}[language=Bash]
 mysqldump -h localhost -uroot -p123456  database > dump.sql
 \end{lstlisting}
+=======
+启动MariaDB时注意是否带了--skip-networking参数，否则会出现数据库启动了，但是端口没有监听的情况。
+
+\paragraph{允许远程登录}
+
+首先以root用户登陆MariaDB服务器：
+
+\begin{lstlisting}[language=Bash]
+--允许用户名为`dolphin`的用户从任意ip以密码为123456访问所有数据库
+grant all PRIVILEGES on *.* to dolphin@'%' identified by '123456';
+--使其生效
+flush privileges;
+\end{lstlisting}
+
+\paragraph{修改数据库密码}
+
+# mysql -uroot -p
+
+2.1 更新 mysql 库中 user 表的字段：
+MariaDB [(none)]> use mysql;  
+MariaDB [mysql]> UPDATE user SET password=password('newpassword') WHERE user='root';  
+MariaDB [mysql]> flush privileges;  
+MariaDB [mysql]> exit;
+
+
+>>>>>>> 4a51943b0adfcc2833175ee89b4f3e30f2fc0eec
 
 \section{常见问题}
 
@@ -1128,6 +1155,11 @@ quit
 systemctl start mariadb.service
 \end{lstlisting}
 
+修改后，登录数据库：
+
+\begin{lstlisting}[language=Bash]
+mysql -u root -p123123
+\end{lstlisting}
 
 
 \chapter*{Bibliography}
