@@ -787,7 +787,7 @@ LOCAL7.*	/var/log/sshd.log
 
 \subsection{ECS(Elastic Compute Service)}
 
-配置内网ECS端口映射规则,在云服务器ECS-->网络和安全-->安全组-->配置规则.
+配置内网ECS端口映射规则,在云服务器ECS-->网络和安全-->安全组-->配置规则-->添加安全组规则.
 
 \subsection{shadowsocks}
 
@@ -1044,6 +1044,31 @@ nsCertType server
 ./easyrsa gen-dh
 \end{lstlisting}
 
+\paragraph{初始化配置文件}
+
+初始化配置文件如下:
+
+\begin{lstlisting}[language=Bash]
+#拷贝示例配置到配置目录
+cp /usr/share/doc/openvpn-2.4.4/sample/sample-config-files/server.conf /etc/openvpn
+\end{lstlisting}
+
+拷贝server.crt/ca.cert等文件到配置目录.
+
+
+\paragraph{生成ta.key}
+
+使用如下命令生成ta.key:
+
+\begin{lstlisting}[language=Bash]
+openvpn --genkey --secret ta.key
+\end{lstlisting}
+
+启动服务端:
+
+\begin{lstlisting}[language=Bash]
+openvpn --config /etc/openvpn/server.conf
+\end{lstlisting}
 
 \subsection{fastDFS}
 
