@@ -850,6 +850,23 @@ youtube-dl -f 137 https://www.youtube.com/watch?v=SnHxKQiXrFU
 
 \subsection{Jenkins}
 
+启动Jenkins提示Job for jenkins.service failed because the control process exited with error code. See "systemctl status jenkins.service" and "journalctl -xe" for details。多半是由于Java未安装或者安装后未指定Java路径。打开文件：
+
+\begin{lstlisting}[language=bash]
+#配置文件中指定Java路径
+vim /etc/rc.d/init.d/jenkins
+#启动Jenkins
+service jenkins start
+\end{lstlisting}
+
+配置文件中指定Java路径如图所示。
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.5]{specifyjavapath.jpg}
+	\caption{指定Jenkins的Java路径}
+	\label{fig:specifyjavapath}
+\end{figure}
 
 
 \subsection{OpenVPN}
@@ -1100,7 +1117,7 @@ openvpn --config /etc/openvpn/server.conf
 systemctl start mariadb.service
 \end{lstlisting}
 
-<<<<<<< HEAD
+
 \subsection{导入导出}
 
 导出整个库结构和数据:
@@ -1108,7 +1125,7 @@ systemctl start mariadb.service
 \begin{lstlisting}[language=Bash]
 mysqldump -h localhost -uroot -p123456  database > dump.sql
 \end{lstlisting}
-=======
+
 启动MariaDB时注意是否带了--skip-networking参数，否则会出现数据库启动了，但是端口没有监听的情况。
 
 \paragraph{允许远程登录}
@@ -1124,16 +1141,21 @@ flush privileges;
 
 \paragraph{修改数据库密码}
 
-# mysql -uroot -p
+修改数据库密码如下：
 
-2.1 更新 mysql 库中 user 表的字段：
-MariaDB [(none)]> use mysql;  
-MariaDB [mysql]> UPDATE user SET password=password('newpassword') WHERE user='root';  
-MariaDB [mysql]> flush privileges;  
-MariaDB [mysql]> exit;
+\begin{lstlisting}[language=Bash]
+#登录SQL
+mysql -uroot -p
+use mysql;  
+UPDATE user SET password=password('newpassword') WHERE user='root';  
+flush privileges;  
+exit;
+\end{lstlisting}
 
 
->>>>>>> 4a51943b0adfcc2833175ee89b4f3e30f2fc0eec
+
+
+
 
 \section{常见问题}
 
