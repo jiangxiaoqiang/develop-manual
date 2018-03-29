@@ -676,13 +676,23 @@ UseDNS=no
 
 \subsection{ssh连接自动断开}
 
-ssh连接总是自动断开，客户端配置：
+ssh连接总是自动断开，如果服务端没有权限配置，或者无法配置，可以配置客户端 ssh，使客户端发起的所有会话都保持连接,客户端配置：
 
 \begin{lstlisting}[language=Bash]
-TCPKeepAlive=yes
 #客户端主动向服务端请求响应的间隔
-ServerAliveInterval 60   
+ServerAliveInterval 60 
+ServerAliveCountMax 60  
 \end{lstlisting}
+
+本地 ssh 每隔30s向 server 端 sshd 发送 keep-alive 包，如果发送 60 次，server 无回应断开连接。可以通过Wireshark抓包,看到每隔30s发送的数据包,如图\ref{fig:sshheartbeatpackage}所示(PS:包的时间戳，可以通过“View>>Time Display Format”设置时间显示格式).
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.4]{sshheartbeatpackage.png}
+	\caption{ssh心跳包}
+	\label{fig:sshheartbeatpackage}
+\end{figure}
+
 
 \subsection{Permission denied (publickey)}
 
@@ -863,8 +873,6 @@ youtube-dl -f 137 https://www.youtube.com/watch?v=SnHxKQiXrFU
 
 \subsection{Jenkins}
 
-<<<<<<< HEAD
-=======
 启动Jenkins提示Job for jenkins.service failed because the control process exited with error code. See "systemctl status jenkins.service" and "journalctl -xe" for details。多半是由于Java未安装或者安装后未指定Java路径。打开文件：
 
 \begin{lstlisting}[language=bash]
@@ -945,12 +953,54 @@ Jenkins中使用gradlew时，Gradle版本始终是某一个，但是build.gradle
 gradle wrapper
 \end{lstlisting}
 
-\subsubsection{Can't retrieve the Gradle executable}
+\subsubsection{Jenkins中Gradle配置}
 
-Can't retrieve the Gradle executable.
+Jenkins中Gradle需要添加全局变量GRADLE\_USER\_HOME,在Jenkins->系统管理->系统设置->全局属性中,添加全局变量GRADLE\_USER\_HOME的路径要保证Jenkins用户有写入的权限,如图\ref{fig:gradleuserhome}所示.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.5]{gradleuserhome.png}
+	\caption{指定Jenkins的Gradle用户路径}
+	\label{fig:gradleuserhome}
+\end{figure}
 
 
->>>>>>> dc4e52259ce4950396524bba7dd87f10f9f60e5e
+\subsubsection{Jenkins运行脚本}
+
+Jenkins后台运行脚本时,需要使用setsid和设置BUILD\_ID=dontKillMe.如下命令所示:
+
+\begin{lstlisting}[language=bash]
+count=`ps -ef | grep dolphin-web-${VERSION} | grep -v "grep" | wc -l`
+if [ $count -lt 1 ]; then
+	#使用setsid启动app
+	#setsid在一个新的会话中运行命令
+	#从而可以避开当前终端发出的HUP信号
+	setsid ${JAVA_HOME}/bin/java -Xmx512M -Xms256M \
+	-jar -Xdebug -Xrunjdwp:transport=dt_socket,suspend=n,server=y,address=5005	\
+	${APP_PATH}/dolphin-web-${VERSION}.jar \
+	--spring.config.location=${APP_PATH}/application.properties>/dev/null &
+else
+	echo "process aready exists!"
+fi
+\end{lstlisting}
+
+Jenkins系统中添加执行脚本的时候，有一些命令是需要sudo权限和来执行的，可以在root权限下添加一下Jenkins账号的权限。如下命令所示:
+
+\begin{lstlisting}[language=bash]
+#打开sudoers文件
+vim /etc/sudoers
+\end{lstlisting}
+
+在/etc/sudoers文件中添加如下内容:
+
+\begin{lstlisting}[language=bash]
+#可以不用输入密码
+#直接以超级管理员权限执行ps命令和kill命令
+jenkins ALL=NOPASSWD:/usr/bin/ps,/usr/bin/kill
+\end{lstlisting}
+
+
+
 \subsection{OpenVPN}
 
 OpenVPN从2001年开始开发，使用的是C语言。此处使用的OpenVPN版本是2.4.1。如果使用Mac下的brew工具安装，则OpenVPN目录在：/usr/local/Cellar/openvpn/2.4.1，OpenVPN的配置文件在：/usr/local/etc/openvpn。目前OpenVPN能在Solaris、Linux、OpenBSD、FreeBSD、NetBSD、Mac OS X与Microsoft Windows以及Android和iOS上运行，并包含了许多安全性的功能。此处的服务器使用的是CentOS 7.3，客户端包含Fedora 24、Ubuntu 14.04、Ubuntu 16.04、Window 7、Windows 10。在OpenVPN网络中查看存活的主机：
@@ -1469,7 +1519,6 @@ task copyTask(type: Copy) {
 
 \part{DB}
 
-
 \chapter{MariaDB}
 
 \section{常用操作}
@@ -1545,6 +1594,43 @@ systemctl start mariadb.service
 \begin{lstlisting}[language=Bash]
 mysql -u root -p123123
 \end{lstlisting}
+
+\part{书籍记录应用}
+
+\chapter{DB}
+
+\section{表}
+
+
+\begin{table}
+	\caption{常见数据库连接池}
+	\label{table:databaseconnectionpool}
+	\begin{center}
+		\begin{tabular}{|c|c|p{7cm}|}
+			\hline
+			\multirow{1}{*}{表名称}
+			%\multirow{1}{c|}{名称}  
+			& \multicolumn{1}{c|}{表说明} 
+			& \multicolumn{1}{c|}{备注}\\			
+			\cline{1-3}
+			book &  书籍表  & 存放所有书籍 \\
+			\hline
+			shelf & 书架表 & 存放每个用户的书籍信息 \\
+			\hline		
+			user & 用户表 & 存放用户信息 \\
+			\hline
+			dictionary & 字典表 & 存放系统字典 \\
+			\hline
+			author & 作者表 & 存放作者信息,包括译者等等 \\
+			\hline
+			publisher & 出版社表 & 存储出版社信息 \\
+			\hline
+		\end{tabular}	
+	\end{center}
+\end{table}
+
+
+字典表用户存储系统字典,如国家字典等,出版社不存储到字典里.在新增数据时,使用户选择数据而不是手工填写.
 
 
 \chapter*{Bibliography}
