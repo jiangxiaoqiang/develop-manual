@@ -967,7 +967,7 @@ Jenkins中Gradle需要添加全局变量GRADLE\_USER\_HOME,在Jenkins->系统管
 
 \subsubsection{Jenkins运行脚本}
 
-Jenkins后台运行脚本时,需要使用setsid和设置BUILD\_ID=dontKillMe.如下命令所示:
+Jenkins后台运行脚本时,需要使用setsid和设置BUILD\_ID=dontKillMe\footnote{\url{https://wiki.jenkins.io/display/JENKINS/ProcessTreeKiller}}.如下命令所示:
 
 \begin{lstlisting}[language=bash]
 count=`ps -ef | grep dolphin-web-${VERSION} | grep -v "grep" | wc -l`
@@ -983,6 +983,15 @@ else
 	echo "process aready exists!"
 fi
 \end{lstlisting}
+
+也可以在Jenkins系统环境变量中设置，如图、日\ref{fig:jenkinsbuildidsetting}所示。
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.5]{jenkinsbuildidsetting.jpg}
+	\caption{Jeknins全局变量}
+	\label{fig:jenkinsbuildidsetting}
+\end{figure}
 
 Jenkins系统中添加执行脚本的时候，有一些命令是需要sudo权限和来执行的，可以在root权限下添加一下Jenkins账号的权限。如下命令所示:
 
@@ -1489,8 +1498,8 @@ Nginx的负载均衡配置，在主机(10.10.1.12)出现问题时，Nginx会自�
 
 \begin{lstlisting}[language=bash]
 upstream backend{
-server 10.10.1.12:28080;
-server 10.10.1.13:28080 backup;
+	server 10.10.1.12:28080;
+	server 10.10.1.13:28080 backup;
 }
 \end{lstlisting}
 
