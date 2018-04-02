@@ -1507,6 +1507,23 @@ upstream backend{
 反向代理与正向代理都是用 proxy\_pass 来实现的, 使用起来没有太大的区别, 本质上都是转发网络请求.
 反向代理一般指服务器将请求转发到内部网络, 这样可以防范外网直接请求内网带来的网络风险。
 
+\subsection{阻止请求}
+
+项目中有一个张表有700W+数据，是采用like匹配，like匹配无法利用索引，只能全表扫描，有时会有爬虫不断的请求此接口，导致数据库压力不断增大。为了临时应对，临时限制此接口的请求。如下代码片段所示：
+
+\begin{lstlisting}[language=bash]
+location /dolphin/api {
+	#匹配类似于/dolphin/api/test/reg?id=1的url
+	#不阻止形如/dolphin/api/test/reg请求
+	if ( $args ~ id= ) {
+		return 403;
+	}
+	proxy_pass http://localhost:8011;
+	proxy_redirect off;
+}
+\end{lstlisting}
+
+
 \subsection{超时转发}
 
 当一个请求到达后端机器，后端机器因某些原因（load高等等）响应变慢导致超时的时候，Nginx会把这个请求转发到另外的后端机器上.The proxy\_next\_upstream directive is a configuration directive to control re-request from a group of upstream servers by a proxy\_pass if request to one of them fails. 

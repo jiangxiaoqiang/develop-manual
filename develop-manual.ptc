@@ -93,15 +93,17 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.4.7}负载均衡(Load Balance)}{26}{subsection.1.4.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.8}超时转发}{27}{subsection.1.4.8}
+\contentsline {subsection}{\numberline {1.4.8}阻止请求}{27}{subsection.1.4.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.9}常见问题}{27}{subsection.1.4.9}
+\contentsline {subsection}{\numberline {1.4.9}超时转发}{27}{subsection.1.4.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{open() "/opt/tengine/conf/nginx.conf" failed (2: No such file or directory)}{27}{section*.21}
+\contentsline {subsection}{\numberline {1.4.10}常见问题}{28}{subsection.1.4.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{error while loading shared libraries: libpcre.so.3: cannot open shared object file}{28}{section*.22}
+\contentsline {paragraph}{open() "/opt/tengine/conf/nginx.conf" failed (2: No such file or directory)}{28}{section*.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{error while loading shared libraries: libssl.so.1.0.0: cannot open shared object file}{28}{section*.23}
+\contentsline {paragraph}{error while loading shared libraries: libpcre.so.3: cannot open shared object file}{29}{section*.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{error while loading shared libraries: libssl.so.1.0.0: cannot open shared object file}{29}{section*.23}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Gradle}{31}{chapter.2}
 \defcounter {refsection}{0}\relax 
