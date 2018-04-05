@@ -89,15 +89,17 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.4.5}开启Gzip压缩}{25}{subsection.1.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.6}Nginx配置}{25}{subsection.1.4.6}
+\contentsline {subsection}{\numberline {1.4.6}Nginx与爬虫(Nginx Anti-Spider)}{25}{subsection.1.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.7}负载均衡(Load Balance)}{26}{subsection.1.4.7}
+\contentsline {subsection}{\numberline {1.4.7}Nginx配置}{25}{subsection.1.4.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.8}阻止请求}{27}{subsection.1.4.8}
+\contentsline {subsection}{\numberline {1.4.8}负载均衡(Load Balance)}{26}{subsection.1.4.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.9}超时转发}{27}{subsection.1.4.9}
+\contentsline {subsection}{\numberline {1.4.9}阻止请求}{27}{subsection.1.4.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.10}常见问题}{28}{subsection.1.4.10}
+\contentsline {subsection}{\numberline {1.4.10}超时转发}{28}{subsection.1.4.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.4.11}常见问题}{28}{subsection.1.4.11}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{open() "/opt/tengine/conf/nginx.conf" failed (2: No such file or directory)}{28}{section*.21}
 \defcounter {refsection}{0}\relax 

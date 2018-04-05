@@ -1450,6 +1450,19 @@ curl -I -H "Accept-Encoding: gzip, deflate" "http://10.10.1.11/main"
 
 -I选项与-header选项是等价的，表示只打印出HTTP头部。开启压缩成功后，可以看到一句：Content-Encoding: gzip。
 
+\subsection{Nginx与爬虫(Nginx Anti-Spider)}
+
+Nginx限制统一IP每分钟访问的次数:
+
+\begin{lstlisting}[language=Bash]
+limit_req_zone $binary_remote_addr zone=one:3m rate=1r/s;
+limit_req_zone $binary_remote_addr $uri zone=two:3m rate=1r/s;
+limit_req_zone $binary_remote_addr $request_uri zone=thre:3m rate=1r/s;      
+\end{lstlisting}
+
+
+可以根据客户端的 user-agents 首部字段来阻止指定的爬虫爬取我们的网站.
+
 \subsection{Nginx配置}
 
 简单的配置：
