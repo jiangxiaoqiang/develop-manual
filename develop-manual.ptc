@@ -107,69 +107,75 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{error while loading shared libraries: libssl.so.1.0.0: cannot open shared object file}{29}{section*.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Gradle}{31}{chapter.2}
+\contentsline {chapter}{\numberline {2}Maven}{31}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}基础}{31}{section.2.1}
+\contentsline {section}{\numberline {2.1}Maven的聚合多模块）和Parent继承}{31}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.1}引用本地文件}{32}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.1}Maven Attention}{31}{subsection.2.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.2}Gradle Properties支持}{32}{subsection.2.1.2}
+\contentsline {chapter}{\numberline {3}Gradle}{33}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.3}执行流程}{33}{subsection.2.1.3}
+\contentsline {section}{\numberline {3.1}基础}{33}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.4}默认JVM}{33}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {3.1.1}引用本地文件}{34}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.5}Repositories}{33}{subsection.2.1.5}
+\contentsline {subsection}{\numberline {3.1.2}Gradle Properties支持}{34}{subsection.3.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.6}常见问题}{35}{subsection.2.1.6}
+\contentsline {subsection}{\numberline {3.1.3}执行流程}{35}{subsection.3.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{could not find method compile()}{35}{section*.24}
+\contentsline {subsection}{\numberline {3.1.4}默认JVM}{35}{subsection.3.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Could not find or load main class org.gradle.wrapper.GradleWrapperMain}{36}{section*.25}
+\contentsline {subsection}{\numberline {3.1.5}Repositories}{35}{subsection.3.1.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Gradle找不到Tasks}{36}{section*.26}
+\contentsline {subsection}{\numberline {3.1.6}常见问题}{37}{subsection.3.1.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Gradle对象}{37}{section.2.2}
+\contentsline {paragraph}{could not find method compile()}{37}{section*.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}属性(Properties)}{37}{subsection.2.2.1}
+\contentsline {paragraph}{Could not find or load main class org.gradle.wrapper.GradleWrapperMain}{38}{section*.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Extra Properties}{37}{section*.27}
+\contentsline {paragraph}{Gradle找不到Tasks}{38}{section*.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{定义目标jar包名}{37}{section*.28}
+\contentsline {section}{\numberline {3.2}Gradle对象}{39}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}Task}{38}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {3.2.1}属性(Properties)}{39}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{拷贝文件}{38}{section*.29}
+\contentsline {subsubsection}{Extra Properties}{39}{section*.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\@mypartnumtocformat {II}{DB}}{41}{part.2}
+\contentsline {paragraph}{定义目标jar包名}{39}{section*.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.2}Task}{40}{subsection.3.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{拷贝文件}{40}{section*.29}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\@mypartnumtocformat {II}{DB}}{43}{part.2}
 \ttl@stoptoc {default@1}
 \ttl@starttoc {default@2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}MariaDB}{43}{chapter.3}
+\contentsline {chapter}{\numberline {4}MariaDB}{45}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}常用操作}{43}{section.3.1}
+\contentsline {section}{\numberline {4.1}常用操作}{45}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}导入导出}{43}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {4.1.1}导入导出}{45}{subsection.4.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{允许远程登录}{43}{section*.30}
+\contentsline {paragraph}{允许远程登录}{45}{section*.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{修改数据库密码}{44}{section*.31}
+\contentsline {paragraph}{修改数据库密码}{46}{section*.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}常见问题}{44}{section.3.2}
+\contentsline {section}{\numberline {4.2}常见问题}{46}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}mariadb 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)}{44}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {4.2.1}mariadb 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)}{46}{subsection.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\@mypartnumtocformat {III}{书籍记录应用}}{47}{part.3}
+\contentsline {part}{\@mypartnumtocformat {III}{书籍记录应用}}{49}{part.3}
 \ttl@stoptoc {default@2}
 \ttl@starttoc {default@3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}DB}{49}{chapter.4}
+\contentsline {chapter}{\numberline {5}DB}{51}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}表}{49}{section.4.1}
+\contentsline {section}{\numberline {5.1}表}{51}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\leavevmode {\color {ocre}Bibliography}}{51}{chapter*.32}
+\contentsline {chapter}{\leavevmode {\color {ocre}Bibliography}}{53}{chapter*.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Books}{51}{section*.33}
+\contentsline {section}{Books}{53}{section*.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Articles}{51}{section*.34}
+\contentsline {section}{Articles}{53}{section*.34}
 \contentsfinish 
