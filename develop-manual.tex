@@ -654,8 +654,12 @@ sudo apt install keychain
 /usr/bin/keychain ~/.ssh/id_rsa
 \end{lstlisting}
 
-keychain会起一个ssh-agent，后来登录的人通过设置环境变量使用同一个ssh-agent.添加的只是在当前shell下生效,如果需要每次都生效.
+keychain会起一个ssh-agent，后来登录的人通过设置环境变量使用同一个ssh-agent.登录Shell时启动keychain:
 
+\begin{lstlisting}[language=Bash]
+#启动keychain
+eval `keychain --eval id_rsa`
+\end{lstlisting}
 
 
 \subsection{ssh连接慢(Connect Slow)}
@@ -1390,20 +1394,22 @@ HttpLimitReqModule用来限制连单位时间内连接数的模块，使用limit
 
 \begin{lstlisting}[language=bash]
 http {
-limit_conn_log_level error;
-limit_conn_status 503;
-#Zone=one或allips表示设置了
-#名为“one”或“allips”的存储区
-#大小为10兆字节
-limit_conn_zone $binary_remote_addr zone=one:10m;
-limit_conn_zone $server_name zone=perserver:10m;
-#rate=10r/s 的意思是允许1秒钟不超过1000个请求
-limit_req_zone $binary_remote_addr zone=allips:100m rate=1000r/s;  
-server {
-limit_conn one 100;
-limit_conn perserver 3000;
-limit_req zone=allips  burst=5  nodelay;
-}
+	limit_conn_log_level error;
+	limit_conn_status 503;
+	#Zone=one或allips表示设置了
+	#名为“one”或“allips”的存储区
+	#大小为10兆字节
+	limit_conn_zone $binary_remote_addr zone=one:10m;
+	limit_conn_zone $server_name zone=perserver:10m;
+	#rate=1000r/s 的意思是允许1秒钟不超过1000个请求
+	limit_req_zone $binary_remote_addr zone=allips:100m rate=1000r/s; 
+	#限制每分钟不超过600个请求
+	limit_req_zone $binary_remote_addr zone=allips:100m rate=600r/m;
+	server {
+		limit_conn one 100;
+		limit_conn perserver 3000;
+		limit_req zone=allips  burst=5  nodelay;
+	}
 }
 \end{lstlisting}
 
@@ -1543,14 +1549,45 @@ location /dolphin/api {
 
 \begin{lstlisting}
 server {
-location / {
-proxy_pass http://backends;
-proxy_next_upstream error timeout http_404;
-}
+	location / {
+		proxy_pass http://backends;
+		proxy_next_upstream error timeout http_404;
+	}
 }
 \end{lstlisting}
 
 proxy\_next\_upstream在nginx中是默认打开的。参数值timeout，这个参数代表如果超时，则尝试其他节点。
+
+\subsection{配置静态服务}
+
+静态文件单独配置一个服务：
+
+\begin{lstlisting}
+server {
+	server_name creditstatic;
+	listen 8088;
+	
+	root /opt/app/static;
+	index index.html index.htm;
+	
+	location / {
+		try_files $uri $uri/ =404;
+	}
+}
+\end{lstlisting}
+
+\subsection{指定首页}
+
+在Nginx中指定默认首页：
+
+\begin{lstlisting}
+server {
+	location / {
+		root   /opt/app/frontend-v1.3/dist;
+		index  /main/index.html;
+	}
+}
+\end{lstlisting}
 
 
 \subsection{常见问题}
@@ -1667,6 +1704,24 @@ def f = $/美刀反斜杠形式
 
 建议使用'和"这两种形式。单引号''中的内容严格对应Java中的String，不对\$符号进行转义。双引号""的内容则和脚本语言的处理有点像，如果字符中有\$号的话，则它会\$表达式先求值。三个引号'''xxx'''中的字符串支持随意换行。
 
+\subsection{Wrapper}
+
+如果项目文件夹下没有gradlew文件，可以通过如下命令生成：
+
+\begin{lstlisting}[language=Bash]
+gradle wrapper
+\end{lstlisting}
+
+其本质是调用build.gradle中的wrapper　task:
+
+\begin{lstlisting}[language=Java]
+task wrapper(type: Wrapper) {
+	description = 'Generates gradlew[.bat] scripts'
+	gradleVersion = '3.2.1'
+}
+\end{lstlisting}
+
+
 \subsection{引用本地文件}
 
 有时候项目依赖的可能不是公布在网络上的一个公共库，可能只是一个闭源的jar包，只是一个本地文件而已。Gradle中引用本地文件写法如下：
@@ -1675,7 +1730,7 @@ def f = $/美刀反斜杠形式
 def ccDataLibs = fileTree(dir: "$rootDir/cc-data/lib", include: '*.jar')
 
 dependencies {
-compile ccDataLibs
+	compile ccDataLibs
 }
 \end{lstlisting}
 
@@ -1732,27 +1787,27 @@ Gradle默认每次编译或者刷新(Refresh)都会Resolve Dependencies，每次
 
 \begin{lstlisting}
 allprojects{
-repositories {
-def ALIYUN_REPOSITORY_URL = 'http://maven.aliyun.com/nexus/content/groups/public'
-def ALIYUN_JCENTER_URL = 'http://maven.aliyun.com/nexus/content/repositories/jcenter'
-all { ArtifactRepository repo ->
-if(repo instanceof MavenArtifactRepository){
-def url = repo.url.toString()
-if (url.startsWith('https://repo1.maven.org/maven2')) {
-project.logger.lifecycle "Repository ${repo.url} replaced by $ALIYUN_REPOSITORY_URL."
-remove repo
-}
-if (url.startsWith('https://jcenter.bintray.com/')) {
-project.logger.lifecycle "Repository ${repo.url} replaced by $ALIYUN_JCENTER_URL."
-remove repo
-}
-}
-}
-maven {
-url ALIYUN_REPOSITORY_URL
-url ALIYUN_JCENTER_URL
-}
-}
+	repositories {
+		def ALIYUN_REPOSITORY_URL = 'http://maven.aliyun.com/nexus/content/groups/public'
+		def ALIYUN_JCENTER_URL = 'http://maven.aliyun.com/nexus/content/repositories/jcenter'
+		all { ArtifactRepository repo ->
+			if(repo instanceof MavenArtifactRepository){
+			def url = repo.url.toString()
+			if (url.startsWith('https://repo1.maven.org/maven2')) {
+				project.logger.lifecycle "Repository ${repo.url} replaced by $ALIYUN_REPOSITORY_URL."
+				remove repo
+			}
+			if (url.startsWith('https://jcenter.bintray.com/')) {
+				project.logger.lifecycle "Repository ${repo.url} replaced by $ALIYUN_JCENTER_URL."
+				remove repo
+			}
+		}
+		}
+		maven {
+		url ALIYUN_REPOSITORY_URL
+		url ALIYUN_JCENTER_URL
+		}
+	}
 }
 \end{lstlisting}
 
@@ -1760,17 +1815,17 @@ url ALIYUN_JCENTER_URL
 
 \begin{lstlisting}[language=Java]
 repositories {
-maven {
-url 'http://www.eveoh.nl/files/maven2'
-}
-maven {
-url 'http://repox.gtan.com:8078'
-}
-mavenCentral()
-jcenter()
-maven { 
-url 'http://repo.spring.io/plugins-release' 
-}
+	maven {
+		url 'http://www.eveoh.nl/files/maven2'
+	}
+	maven {
+		url 'http://repox.gtan.com:8078'
+	}
+	mavenCentral()
+	jcenter()
+	maven { 
+		url 'http://repo.spring.io/plugins-release' 
+	}
 }
 \end{lstlisting}
 
@@ -1821,13 +1876,13 @@ extra属性一般用于定义常量，All extra properties\footnote{\url{https:/
 
 \begin{lstlisting}[language=Java]
 buildscript {
-ext {
-springBootVersion = '1.4.5.RELEASE'
-jacksonVersion = '2.8.7'
-springfoxVersion = '2.6.1'
-poiVersion = "3.14"
-aspectjVersion = '1.7.4'
-}
+	ext {
+		springBootVersion = '1.4.5.RELEASE'
+		jacksonVersion = '2.8.7'
+		springfoxVersion = '2.6.1'
+		poiVersion = "3.14"
+		aspectjVersion = '1.7.4'
+	}
 }
 \end{lstlisting}
 

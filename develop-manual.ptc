@@ -19,13 +19,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.1.3}ssh连接自动断开}{5}{subsection.1.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.4}Permission denied (publickey)}{6}{subsection.1.1.4}
+\contentsline {subsection}{\numberline {1.1.4}Permission denied (publickey)}{5}{subsection.1.1.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.1.5}Session时间}{6}{subsection.1.1.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{ClientAliveInterval}{6}{section*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{ClientAliveCountMax}{6}{section*.5}
+\contentsline {paragraph}{ClientAliveCountMax}{7}{section*.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{ControlPersist 4h}{7}{section*.6}
 \defcounter {refsection}{0}\relax 
@@ -35,7 +35,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.1.7}ssh查看日志}{8}{subsection.1.1.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}VisualVM}{8}{section.1.2}
+\contentsline {section}{\numberline {1.2}VisualVM}{9}{section.1.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.3}Tool Set}{9}{section.1.3}
 \defcounter {refsection}{0}\relax 
@@ -53,7 +53,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{Jenkins中Gradle配置}{12}{section*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Jenkins运行脚本}{12}{section*.11}
+\contentsline {subsubsection}{Jenkins运行脚本}{13}{section*.11}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.3.5}OpenVPN}{14}{subsection.1.3.5}
 \defcounter {refsection}{0}\relax 
@@ -65,7 +65,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{生成服务器端证书}{15}{section*.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{生成客户端证书}{15}{section*.16}
+\contentsline {paragraph}{生成客户端证书}{16}{section*.16}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{生成Diffle Hellman参数}{18}{section*.17}
 \defcounter {refsection}{0}\relax 
@@ -73,15 +73,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{生成ta.key}{18}{section*.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{拷贝客户端文件}{18}{section*.20}
+\contentsline {paragraph}{拷贝客户端文件}{19}{section*.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.6}fastDFS}{18}{subsection.1.3.6}
+\contentsline {subsection}{\numberline {1.3.6}fastDFS}{19}{subsection.1.3.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.4}Nginx}{19}{section.1.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.4.1}X-Forwarded-For}{19}{subsection.1.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.2}Nginx获取真实IP}{19}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.2}Nginx获取真实IP}{20}{subsection.1.4.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.4.3}Nginx并发(Nginx Concurrent)}{23}{subsection.1.4.3}
 \defcounter {refsection}{0}\relax 
@@ -89,87 +89,93 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.4.5}开启Gzip压缩}{25}{subsection.1.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.6}Nginx与爬虫(Nginx Anti-Spider)}{25}{subsection.1.4.6}
+\contentsline {subsection}{\numberline {1.4.6}Nginx与爬虫(Nginx Anti-Spider)}{26}{subsection.1.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.7}Nginx配置}{25}{subsection.1.4.7}
+\contentsline {subsection}{\numberline {1.4.7}Nginx配置}{26}{subsection.1.4.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.8}负载均衡(Load Balance)}{26}{subsection.1.4.8}
+\contentsline {subsection}{\numberline {1.4.8}负载均衡(Load Balance)}{27}{subsection.1.4.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.9}阻止请求}{27}{subsection.1.4.9}
+\contentsline {subsection}{\numberline {1.4.9}阻止请求}{28}{subsection.1.4.9}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.4.10}超时转发}{28}{subsection.1.4.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.11}常见问题}{28}{subsection.1.4.11}
+\contentsline {subsection}{\numberline {1.4.11}配置静态服务}{28}{subsection.1.4.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{open() "/opt/tengine/conf/nginx.conf" failed (2: No such file or directory)}{28}{section*.21}
+\contentsline {subsection}{\numberline {1.4.12}指定首页}{29}{subsection.1.4.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{error while loading shared libraries: libpcre.so.3: cannot open shared object file}{29}{section*.22}
+\contentsline {subsection}{\numberline {1.4.13}常见问题}{29}{subsection.1.4.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{error while loading shared libraries: libssl.so.1.0.0: cannot open shared object file}{29}{section*.23}
+\contentsline {paragraph}{open() "/opt/tengine/conf/nginx.conf" failed (2: No such file or directory)}{29}{section*.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Gradle}{31}{chapter.2}
+\contentsline {paragraph}{error while loading shared libraries: libpcre.so.3: cannot open shared object file}{30}{section*.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}基础}{31}{section.2.1}
+\contentsline {paragraph}{error while loading shared libraries: libssl.so.1.0.0: cannot open shared object file}{30}{section*.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.1}引用本地文件}{32}{subsection.2.1.1}
+\contentsline {chapter}{\numberline {2}Gradle}{33}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.2}Gradle Properties支持}{32}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.1}基础}{33}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.3}执行流程}{33}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.1}Wrapper}{34}{subsection.2.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.4}默认JVM}{33}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.2}引用本地文件}{34}{subsection.2.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.5}Repositories}{33}{subsection.2.1.5}
+\contentsline {subsection}{\numberline {2.1.3}Gradle Properties支持}{35}{subsection.2.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.6}常见问题}{35}{subsection.2.1.6}
+\contentsline {subsection}{\numberline {2.1.4}执行流程}{35}{subsection.2.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{could not find method compile()}{35}{section*.24}
+\contentsline {subsection}{\numberline {2.1.5}默认JVM}{35}{subsection.2.1.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Could not find or load main class org.gradle.wrapper.GradleWrapperMain}{36}{section*.25}
+\contentsline {subsection}{\numberline {2.1.6}Repositories}{36}{subsection.2.1.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Gradle找不到Tasks}{36}{section*.26}
+\contentsline {subsection}{\numberline {2.1.7}常见问题}{38}{subsection.2.1.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Gradle对象}{37}{section.2.2}
+\contentsline {paragraph}{could not find method compile()}{38}{section*.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}属性(Properties)}{37}{subsection.2.2.1}
+\contentsline {paragraph}{Could not find or load main class org.gradle.wrapper.GradleWrapperMain}{38}{section*.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Extra Properties}{37}{section*.27}
+\contentsline {paragraph}{Gradle找不到Tasks}{38}{section*.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{定义目标jar包名}{37}{section*.28}
+\contentsline {section}{\numberline {2.2}Gradle对象}{39}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}Task}{38}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.1}属性(Properties)}{39}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{拷贝文件}{38}{section*.29}
+\contentsline {subsubsection}{Extra Properties}{39}{section*.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\@mypartnumtocformat {II}{DB}}{41}{part.2}
+\contentsline {paragraph}{定义目标jar包名}{40}{section*.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.2}Task}{40}{subsection.2.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{拷贝文件}{40}{section*.29}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\@mypartnumtocformat {II}{DB}}{43}{part.2}
 \ttl@stoptoc {default@1}
 \ttl@starttoc {default@2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}MariaDB}{43}{chapter.3}
+\contentsline {chapter}{\numberline {3}MariaDB}{45}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}常用操作}{43}{section.3.1}
+\contentsline {section}{\numberline {3.1}常用操作}{45}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}导入导出}{43}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.1}导入导出}{45}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{允许远程登录}{43}{section*.30}
+\contentsline {paragraph}{允许远程登录}{45}{section*.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{修改数据库密码}{44}{section*.31}
+\contentsline {paragraph}{修改数据库密码}{46}{section*.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}常见问题}{44}{section.3.2}
+\contentsline {section}{\numberline {3.2}常见问题}{46}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}mariadb 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)}{44}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.1}mariadb 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)}{46}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\@mypartnumtocformat {III}{书籍记录应用}}{47}{part.3}
+\contentsline {part}{\@mypartnumtocformat {III}{书籍记录应用}}{49}{part.3}
 \ttl@stoptoc {default@2}
 \ttl@starttoc {default@3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}DB}{49}{chapter.4}
+\contentsline {chapter}{\numberline {4}DB}{51}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}表}{49}{section.4.1}
+\contentsline {section}{\numberline {4.1}表}{51}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\leavevmode {\color {ocre}Bibliography}}{51}{chapter*.32}
+\contentsline {chapter}{\leavevmode {\color {ocre}Bibliography}}{53}{chapter*.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Books}{51}{section*.33}
+\contentsline {section}{Books}{53}{section*.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Articles}{51}{section*.34}
+\contentsline {section}{Articles}{53}{section*.34}
 \contentsfinish 
