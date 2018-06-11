@@ -1671,6 +1671,31 @@ yum provides */libssl.so.1.0.0
 
 在http://rpm.pbone.net/上搜索 openssl1-1.0.0 ,搜到openssl1-1.0.0-4.fc24.x86\_64.rpm。
 
+
+\chapter{Maven}
+
+\section{Maven的聚合多模块）和Parent继承}
+
+继承是 Maven 中很强大的一种功能，继承可以使得子POM可以获得 parent 中的各项配置，可以对子pom进行统一的配置和依赖管理。父POM中的大多数元素都能被子POM继承.This feature is only for enhancing the development in a local checkout of that project. Set the value to an empty string in case you want to disable the feature and always resolve the parent POM from the repositories.
+Default value is: ../pom.xml.
+
+Eclipse路径：/home/hldev/eclipse/java-oxygen/eclipse．
+
+
+\subsection{Maven Attention}
+
+项目中在使用forEeach的Lambda表达式时，总是提示运行时错误：Error creating entityManagerFactory due to error tying to scan jar-file。Eclipse的项目设置明明是设置的jdk8.后来发现项目的Maven设置的是jdk1.7版本。
+
+
+\begin{lstlisting}[language=bash]
+<properties>
+	<jdk.version>1.7</jdk.version>
+<properties>
+\end{lstlisting}
+
+还有一种说法是hibernate-entitymanager的版本升级到4.2.0可以解决。Fixed it by updating the hibernate-entitymanager artifact version from 4.2.0.Final to 4.3.8.Final.当前项目的hibernate-entitymanager版本也不符合要求。
+
+
 \chapter{Gradle}
 
 一般在Mac下Gradle的安装路径为：/usr/local/Cellar/gradle/3.2.1/libexec，在Mac的Intellij Idea指定Gradle路径时，即用此路径。
