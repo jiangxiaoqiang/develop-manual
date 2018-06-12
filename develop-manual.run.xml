@@ -54,8 +54,13 @@
       <file>blx-dm.def</file>
       <file>blx-unicode.def</file>
       <file>blx-compat.def</file>
+<<<<<<< HEAD
       <file>blx-bibtex.def</file>
       <file>biblatex.def</file>
+=======
+      <file>biblatex_legacy.def</file>
+      <file>numeric.bbx</file>
+>>>>>>> 1f7e37103c8e08b9818c20979ecc5320b5c2953f
       <file>standard.bbx</file>
       <file>numeric.bbx</file>
       <file>numeric.cbx</file>
