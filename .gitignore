@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 *.aux
 *.log
 *.synctex.gz
 *.toc
+=======
+*.pdf
+*.aux
+*.log
+*.synctex.gz
+*.toc
+>>>>>>> 7c4542148b26c6fcf33d042706a038be525440f3
